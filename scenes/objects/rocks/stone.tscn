@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://csuhsfsgehsr8"]
+
+[ext_resource type="Texture2D" uid="uid://cjcky6dcy2hql" path="res://assets/game/objects/items/tools_material_items.png" id="1_sw5uf"]
+[ext_resource type="PackedScene" uid="uid://bcuhgih82oawr" path="res://scenes/components/collectible_component.tscn" id="2_fqbj7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbhnb"]
+atlas = ExtResource("1_sw5uf")
+region = Rect2(50, 36, 12, 10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rlps0"]
+
+[node name="Stone" type="Sprite2D"]
+texture = SubResource("AtlasTexture_xbhnb")
+
+[node name="CollectibleComponent" parent="." instance=ExtResource("2_fqbj7")]
+collectible_name = "stone"
+
+[node name="CollectibleCollisionShape2D" type="CollisionShape2D" parent="CollectibleComponent"]
+scale = Vector2(0.6, 0.6)
+shape = SubResource("CircleShape2D_rlps0")
